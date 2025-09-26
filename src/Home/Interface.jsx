@@ -1,23 +1,24 @@
 import React, {  useState } from 'react'
+import NavBar from '../Components/NavBar';
 
 const InterfacePage = () => {
 
   const [result , setResult] = useState('');
   const [computerChoice , setComputerChoice] = useState('');
   const [userChoices , setUserChoices] = useState('');
-  
+
   const choiceMap ={
     1 : "Stone",
     2 : "Paper",
     3 : "Scissor"
   }
-  const handleClick= async (e)=>{
+  const handleClick= (e)=>{
     console.log(e.target.value);
     const userChoice = Number(e.target.value);
     setUserChoices(userChoice);
     const comp =  Math.floor( Math.random() * 3 ) +1;
 
-    // console.log("computer choice: "+ computerChoice)
+      
     const findWinner =  (userChoice,computerChoice) =>{
       if( userChoice == computerChoice ) return "DRAW"
     
